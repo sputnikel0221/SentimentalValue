@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ChangeCanvas : MonoBehaviour
 {
+    public static int thisCanvas=0;
+
     //*Find Root Object and Start WORK1, WORK2
     public void Change(GameObject gameObject, int canvasCount, int i){
 
@@ -21,5 +23,10 @@ public class ChangeCanvas : MonoBehaviour
     //*WORK2 - make just one canvas SetActive(true)
     void SetActiveTrue(GameObject p_root, int p_i){
         p_root.transform.GetChild(p_i).gameObject.SetActive(true);
+        thisCanvas = p_i;
+    }
+    
+    public int GetCurrnetCanvas(){
+        return thisCanvas;
     }
 }
