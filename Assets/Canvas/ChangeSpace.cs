@@ -10,7 +10,7 @@ public class ChangeSpace : MonoBehaviour
 
     void Awake()
     {
-        cv = this.gameObject.AddComponent<ChangeCanvas>();
+        cv = gameObject.GetComponent<ChangeCanvas>();
     }
 
     // Update is called once per frame
