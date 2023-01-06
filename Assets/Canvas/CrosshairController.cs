@@ -21,7 +21,8 @@ public class CrosshairController : MonoBehaviour
 
     void Awake()
     {
-        cv = new ChangeCanvas();
+        // cv = new ChangeCanvas();
+        cv = gameObject.GetComponent<ChangeCanvas>();
         tf_Crossimage.gameObject.SetActive(false);
         tf_Crosstext.gameObject.SetActive(false);
     }
