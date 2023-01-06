@@ -1090,8 +1090,8 @@ MonoBehaviour:
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 30
-    m_MaxSize: 45
-    m_Alignment: 3
+    m_MaxSize: 35
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1463,6 +1463,7 @@ GameObject:
   - component: {fileID: 847538923}
   - component: {fileID: 847538922}
   - component: {fileID: 847538924}
+  - component: {fileID: 847538925}
   m_Layer: 0
   m_Name: CanvasManager
   m_TagString: Untagged
@@ -1511,6 +1512,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tf_Crosshair: {fileID: 898574272}
   room: {fileID: 1068698359}
+  tf_Crossimage: {fileID: 625033200}
+  tf_Crosstext: {fileID: 626126796}
+--- !u!114 &847538925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847538921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a96ea759ee2194d981ec7b669e5e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tf_infotext: {fileID: 1187131121}
 --- !u!1 &878812450
 GameObject:
   m_ObjectHideFlags: 0
