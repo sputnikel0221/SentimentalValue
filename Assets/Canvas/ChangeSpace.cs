@@ -19,29 +19,11 @@ public class ChangeSpace : MonoBehaviour
         ChangeInfo();
     }
 
+    //*change Room space using Dict List
     void ChangeInfo()
     {
-        switch (c_index = cv.GetCurrnetCanvas())
-        {
-            case 0:
-                tf_infotext.GetComponent<Text>().text = "메인";
-                break;
-            case 1:
-                tf_infotext.GetComponent<Text>().text = "전시장";
-                break;
-            case 2:
-                tf_infotext.GetComponent<Text>().text = "침대";
-                break;
-            case 3:
-                tf_infotext.GetComponent<Text>().text = "컴퓨터";
-                break;
-            case 4:
-                tf_infotext.GetComponent<Text>().text = "문";
-                break;
-        }
+        c_index = cv.GetCurrnetCanvas();
+        tf_infotext.GetComponent<Text>().text = cv.TakeStringValue(cv.TakeKey(c_index));
     }
 
-    int GetCurrnetCanvas(){
-        return c_index;
-    }
 }

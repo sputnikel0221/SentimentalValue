@@ -21,9 +21,6 @@ public class InterButton : MonoBehaviour
     }
 
     //일단 사용자가 적도록 하기, 나중에 dictionary length바탕으로 받아오도록
-    //모든 Canvas의 개수
-    [SerializeField]
-    private int canvasCount;
 
     //*View Canvas which has same tag with switch
     public void ButtonClicked()

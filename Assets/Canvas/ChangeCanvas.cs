@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-
 public class ChangeCanvas : MonoBehaviour
 {
     public static int thisCanvas = 0;
@@ -18,15 +17,16 @@ public class ChangeCanvas : MonoBehaviour
     }
 
     static Dictionary<string, Room> roomDic;
+
     void Awake()
     {
         roomDic = new Dictionary<string, Room>();
 
-        if(roomDic.Count == 0){
+        if (roomDic.Count == 0)
+        {
             Debug.Log("Dictionary Setting");
             InitializeDic();
         }
-                
     }
 
     //*Find Root Object and Start WORK1, WORK2
@@ -62,21 +62,38 @@ public class ChangeCanvas : MonoBehaviour
     //? Dictiionary화 하였다. 여기에 Room들을 추가하면 된다.
     void InitializeDic()
     {
-        roomDic.Add("Main", new Room(0,"메인"));
-        roomDic.Add("Cabinet", new Room(1,"전시장"));
-        roomDic.Add("Bed", new Room(2,"침대"));
-        roomDic.Add("Computer", new Room(3,"컴퓨터"));
-        roomDic.Add("Door", new Room(4,"문"));
+        roomDic.Add("Main", new Room(0, "메인"));
+        roomDic.Add("Cabinet", new Room(1, "전시장"));
+        roomDic.Add("Bed", new Room(2, "침대"));
+        roomDic.Add("Computer", new Room(3, "컴퓨터"));
+        roomDic.Add("Door", new Room(4, "문"));
     }
 
-    public int TakeIntValue(string key){
+    public int TakeIntValue(string key)
+    {
         return roomDic[key].index;
     }
-    public string TakeStringValue(string key){
+    public string TakeStringValue(string key)
+    {
         return roomDic[key].text;
     }
-    public int TakeDicCount(){
+    public int TakeDicCount()
+    {
         return roomDic.Count;
     }
 
+
+    //*make Key, Value List and find Key by index of value
+    public string TakeKey(int x){
+        List<string> keys = new List<string>(roomDic.Keys);
+        List<Room> values = new List<Room>(roomDic.Values);
+
+        for(int i=0; i<values.Count; i++){
+            if(values[i].index == x){
+                return keys[i];
+            }
+        }
+        return null;
+    }
+    
 }
