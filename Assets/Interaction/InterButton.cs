@@ -5,7 +5,6 @@ public class InterButton : MonoBehaviour
 {
     //*SINGLETON
     private static InterButton instance = null;
-
     void Awake()
     {
         if (null == instance)
@@ -55,7 +54,6 @@ public class InterButton : MonoBehaviour
                 break;
         }
     }
-
 }
 
 
