@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class CrosshairController : MonoBehaviour
 {
@@ -23,8 +21,7 @@ public class CrosshairController : MonoBehaviour
 
     void Awake()
     {
-        cv = gameObject.GetComponent<ChangeCanvas>();
-
+        cv = new ChangeCanvas();
         tf_Crossimage.gameObject.SetActive(false);
         tf_Crosstext.gameObject.SetActive(false);
     }
@@ -70,24 +67,8 @@ public class CrosshairController : MonoBehaviour
                 tf_Crosstext.gameObject.SetActive(true);
                 Debug.Log("This is Button");
 
-                switch (results[0].gameObject.transform.GetComponent<Button>().tag)
-                {
-                    case "Main":
-                        ChangeCrossText("메인");
-                        break;
-                    case "Cabinet":
-                        ChangeCrossText("전시장");
-                        break;
-                    case "Bed":
-                        ChangeCrossText("침대");
-                        break;
-                    case "Computer":
-                        ChangeCrossText("컴퓨터");
-                        break;
-                    case "Door":
-                        ChangeCrossText("문");
-                        break;
-                }
+                //Change CrossHair Text
+                ChangeCrossText(cv.TakeStringValue(results[0].gameObject.transform.GetComponent<Button>().tag));
             }
             else
             {

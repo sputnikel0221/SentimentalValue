@@ -7,8 +7,8 @@ public class ChangeCanvas : MonoBehaviour
 
     public struct Room
     {
-        int index;
-        string text;
+        public int index;
+        public string text;
 
         public Room(int x, string y)
         {
@@ -16,10 +16,12 @@ public class ChangeCanvas : MonoBehaviour
             this.text = y;
         }
     }
-    public static Dictionary<string, Room> roomDic = new Dictionary<string, Room>();
 
+    static Dictionary<string, Room> roomDic;
     void Awake()
     {
+        roomDic = new Dictionary<string, Room>();
+
         if(roomDic.Count == 0){
             Debug.Log("Dictionary Setting");
             InitializeDic();
@@ -57,7 +59,7 @@ public class ChangeCanvas : MonoBehaviour
         return thisCanvas;
     }
 
-    //? 여기에 Room들을 추가하면 된다.
+    //? Dictiionary화 하였다. 여기에 Room들을 추가하면 된다.
     void InitializeDic()
     {
         roomDic.Add("Main", new Room(0,"메인"));
@@ -66,4 +68,15 @@ public class ChangeCanvas : MonoBehaviour
         roomDic.Add("Computer", new Room(3,"컴퓨터"));
         roomDic.Add("Door", new Room(4,"문"));
     }
+
+    public int TakeIntValue(string key){
+        return roomDic[key].index;
+    }
+    public string TakeStringValue(string key){
+        return roomDic[key].text;
+    }
+    public int TakeDicCount(){
+        return roomDic.Count;
+    }
+
 }

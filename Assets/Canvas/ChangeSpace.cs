@@ -6,7 +6,7 @@ public class ChangeSpace : MonoBehaviour
     [SerializeField] private Transform tf_infotext;
 
     ChangeCanvas cv;
-    int c_index;
+    static int c_index;
 
     void Awake()
     {
@@ -41,4 +41,7 @@ public class ChangeSpace : MonoBehaviour
         }
     }
 
+    int GetCurrnetCanvas(){
+        return c_index;
+    }
 }
