@@ -3278,6 +3278,8 @@ GameObject:
   - component: {fileID: 1842511613}
   - component: {fileID: 1842511614}
   - component: {fileID: 1842511615}
+  - component: {fileID: 1842511616}
+  - component: {fileID: 1842511617}
   m_Layer: 0
   m_Name: InteractManager
   m_TagString: Untagged
@@ -3326,6 +3328,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tf_Dialog_Bar: {fileID: 1133057714}
   tf_Person_Bar: {fileID: 1214381015}
+--- !u!114 &1842511616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842511612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee58bacaa9afe204fab893fd0a1a28f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1842511617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842511612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01934cc5ed667ed4eb09c5ca57950f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csv_FileName: prologue
 --- !u!1 &2036541972
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,7 +41,7 @@ public class StandEffect : MonoBehaviour
             else
             {
                 //0.15에서 0까지 랜덤초만큼 지연을 시키려면, alpha값은 얼마만큼 바뀌어야하는가?
-                //? N * waitSec = 0.15(DefaultAlpha); N=0.15(DefaultAlpha) / waitSec; 
+                //? N * amount = 0.15(DefaultAlpha); N=0.15(DefaultAlpha) / amount; 
                 for (float alpha = DefaultAlpha; alpha > 0; alpha -= (DefaultAlpha / amount))
                 {
                     c.a = alpha;
@@ -49,7 +49,8 @@ public class StandEffect : MonoBehaviour
                     yield return new WaitForSeconds(DefaultAlpha / amount);
                 }
                 
-                //alpha -= (DefaultAlpha / amount) 라는 값이 정확히 0이 되지 않아 없어지지 않는 경우가 존재하므로 0으로 직접 설정
+                //alpha -= (DefaultAlpha / amount) 라는 값이 
+                //정확히 0이 되지 않아 없어지지 않는 경우가 존재하므로 0으로 직접 설정
                 c.a = 0;
                 this.gameObject.GetComponent<Image>().color = c;
 
@@ -64,6 +65,7 @@ public class StandEffect : MonoBehaviour
             //불이 꺼지든 켜지든 실행되는 지연문으로, 100을 곱하는게 더 자연스럽다는 판단에 100을 곱함.
             //어짜피 100을 곱하든 안곱하든 0.0002527899 이런 값에 100을 곱하는 것이라 작은 값임은 같다.
             yield return new WaitForSeconds(DefaultAlpha / amount * 100);
+
         }
     }
 }
