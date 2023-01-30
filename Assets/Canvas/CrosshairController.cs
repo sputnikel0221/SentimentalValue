@@ -66,7 +66,7 @@ public class CrosshairController : MonoBehaviour
                 tf_Crosshair.GetComponent<Image>().color = new Color32(255, 0, 250, 255);
                 tf_Crossimage.gameObject.SetActive(true);
                 tf_Crosstext.gameObject.SetActive(true);
-                Debug.Log("This is Button");
+                // Debug.Log("This is a Button");
 
                 //Change CrossHair Text
                 ChangeCrossText(cv.TakeStringValue(results[0].gameObject.transform.GetComponent<Button>().tag));

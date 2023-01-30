@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//parsing된 데이터중 사용할 부분만 getterDialogue에 저장한다.
 public class DatabaseManager : MonoBehaviour
 {
     //singleton

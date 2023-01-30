@@ -24,7 +24,7 @@ public class ChangeCanvas : MonoBehaviour
 
         if (roomDic.Count == 0)
         {
-            Debug.Log("Dictionary Setting");
+            // Debug.Log("Dictionary Setting");
             InitializeDic();
         }
     }
