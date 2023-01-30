@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TalkingManager : MonoBehaviour
 {
@@ -45,6 +46,7 @@ public class TalkingManager : MonoBehaviour
                     else
                     {
                         //todo : enddialogue
+                        EndDialogue();
                     }
 
                 }
@@ -101,6 +103,14 @@ public class TalkingManager : MonoBehaviour
         d_stop = true;
 
         yield return null;
+    }
+
+    public void EndDialogue(){
+        tf_Person_Bar.transform.GetChild(0).GetComponent<Text>().text = "";
+        tf_Dialog_Bar.transform.GetChild(0).GetComponent<Text>().text = "";
+        d_stop = true;
+        isTalking = false;
+        dialogues = null;
     }
 
 

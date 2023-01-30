@@ -26,11 +26,11 @@ public class InterButton : MonoBehaviour
     //*View Canvas which has same tag with switch
     public void ButtonClicked()
     {
-        //https://etst.tistory.com/32 - ChangeCanvas가 Mono라서 생기는 문제
-        //Mono라는 것은 오브젝트에 달라붙는 스크립트이고, 해당 오브젝트에서 가져와야하는데
-        //AddComponent로 붙여버리면 된다, 하지만 컴퍼넌트가 무한 증식하는데.. 
-        //아래 구문으로 해결
-        if (cv==null){
+        //대화중이라면 버튼을 눌렀을때 아무 행동도 하지 않음
+        if(TalkingManager.isTalking){
+            return;
+        } else {
+            if (cv==null){
             cv = this.gameObject.AddComponent<ChangeCanvas>();
         } else cv = this.gameObject.GetComponent<ChangeCanvas>();
 
@@ -38,6 +38,11 @@ public class InterButton : MonoBehaviour
         GameObject gameObject = EventSystem.current.currentSelectedGameObject;
 
         cv.Change(gameObject, cv.TakeDicCount(), cv.TakeIntValue(gameObject.tag));
+        }
+        //https://etst.tistory.com/32 - ChangeCanvas가 Mono라서 생기는 문제
+        //Mono라는 것은 오브젝트에 달라붙는 스크립트이고, 해당 오브젝트에서 가져와야하는데
+        //AddComponent로 붙여버리면 된다, 하지만 컴퍼넌트가 무한 증식하는데.. 
+        //위 구문으로 해결
     }
 }
 
