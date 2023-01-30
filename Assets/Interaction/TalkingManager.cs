@@ -16,6 +16,11 @@ public class TalkingManager : MonoBehaviour
     void Update()
     {
         setTalking();
+        if(isTalking){
+            if(Input.GetKeyDown(KeyCode.Space)){
+                //space누를 시, 다음 문장 실행
+            }
+        }
     }
 
     public void setTalking(){
