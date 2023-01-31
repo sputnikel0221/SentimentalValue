@@ -30,7 +30,7 @@ public class DatabaseManager : MonoBehaviour
             {
                 dialogueDic.Add(i + 1, dialogues[i]);
             }
-            isFinish = true; //* 전부다 끝나면 isFinish를 true로 만든다. 굳이 하는 이유는??
+            isFinish = true;
         }
     }
 

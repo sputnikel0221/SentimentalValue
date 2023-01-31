@@ -8,8 +8,7 @@ public class DialogueParser : MonoBehaviour
     //File에서 Dialogue를 추출하는 함수
     public Dialogue[] Parse(string _CSVFileName)
     {
-        //dialogue를 받을 list
-        List<Dialogue> dialogueList = new List<Dialogue>();
+        List<Dialogue> dialogueList = new List<Dialogue>(); //dialogue를 받을 list
 
         //TextAsset이란 형태로 받을 수 있는데, Resources에서 해당 파일 이름을 TextAsset형태로 Load한다.
         TextAsset csvData = Resources.Load<TextAsset>(_CSVFileName);

@@ -61,6 +61,7 @@ public class CrosshairController : MonoBehaviour
         //if top object is button, then print log
         if (results.Count > 0)
         {
+            //result의 최상위인 button component만 인식
             if (results[0].gameObject.transform.GetComponent<Button>())
             {
                 tf_Crosshair.GetComponent<Image>().color = new Color32(255, 0, 250, 255);
